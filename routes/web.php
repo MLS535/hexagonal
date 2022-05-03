@@ -28,8 +28,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/shops', function () {
-    return Inertia::render('Shop');
-})->middleware(['auth', 'verified'])->name('shops');
+//Route::get('/dashboard/shops', function () {
+//    return Inertia::render('Shop');
+//})->middleware(['auth', 'verified'])->name('shops');
 
+Route::get('/dashboard/shops', [\App\Http\Controllers\GetAllShopController::class, 'handleWeb'])->middleware(['auth', 'verified'])->name('shops');
 require __DIR__.'/auth.php';

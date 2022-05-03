@@ -33,8 +33,8 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <BreezeNavLink :href="route('agenda')" :active="route().current('agenda')">
-                                    Agenda
+                                <BreezeNavLink :href="route('shops')" :active="route().current('shops')">
+                                    Shops
                                 </BreezeNavLink>
                             </div>
 
@@ -84,11 +84,11 @@ const showingNavigationDropdown = ref(false);
                             Dashboard
                         </BreezeResponsiveNavLink>
                     </div>
-                    <div class="pt-2 pb-3 space-y-1">
-                        <BreezeResponsiveNavLink :href="route('agenda')" :active="route().current('agenda')">
-                            Agenda
-                        </BreezeResponsiveNavLink>
-                    </div>
+<!--                    <div class="pt-2 pb-3 space-y-1">-->
+<!--                        <BreezeResponsiveNavLink :href="route('agenda')" :active="route().current('agenda')">-->
+<!--                            Agenda-->
+<!--                        </BreezeResponsiveNavLink>-->
+<!--                    </div>-->
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="px-4">
@@ -109,14 +109,14 @@ const showingNavigationDropdown = ref(false);
             <header class="bg-white shadow" v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
-                    <slot name="agenda" />
+<!--                    <slot name="agenda" />-->
                 </div>
             </header>
 
             <!-- Page Content -->
-            <main>
-                <slot name="agenda"/>
-            </main>
+<!--            <main>-->
+<!--                <slot name="agenda"/>-->
+<!--            </main>-->
         </div>
     </div>
 </template>
