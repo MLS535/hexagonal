@@ -5,21 +5,25 @@ namespace Src\Context\Shop\Application\Service\Create;
 
 
 
+use Src\Context\Shop\Domain\Service\GenerateShopPhoneService;
 use Src\Context\Shop\Infraestructure\Repository\ShopRepository;
 
 class CreateShopCommand
 {
 
+
+//    private int $shopPhone;
+
     /**
      * CreateShopCommand constructor.
      * @param string $shopname
      * @param string $shopaddress
-     * @param int $shopPhone
+     * @param int|null $shopPhone
      */
     public function __construct(
-                                   private string $shopname,
-                                   private string $shopaddress,
-                                   private int $shopPhone,
+        private  string $shopname,
+        private  string $shopaddress,
+        private  ?int    $shopPhone,
     )
     {
     }
@@ -41,9 +45,9 @@ class CreateShopCommand
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function shopPhone(): int
+    public function shopPhone(): ?int
     {
         return $this->shopPhone;
     }

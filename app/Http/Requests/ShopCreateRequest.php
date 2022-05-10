@@ -27,7 +27,7 @@ class ShopCreateRequest extends FormRequest
             //
             'shopname'=>'required',
             'shopaddress'=>'required',
-            'shopPhone'=>'required',
+            'shopPhone'=>'nullable',
 
         ];
     }

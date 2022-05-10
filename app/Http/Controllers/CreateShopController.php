@@ -32,7 +32,6 @@ class CreateShopController extends Controller
                     $request->get('shopname'),
                     $request->get('shopaddress'),
                     $request->get('shopPhone'),
-
                 )
 
             );

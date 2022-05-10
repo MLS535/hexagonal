@@ -4,6 +4,7 @@
 namespace Src\Context\Shop\Application\Service\Create;
 
 
+use Src\Context\Shop\Domain\Service\GenerateShopPhoneService;
 use Src\Context\Shop\Domain\ValueObject\ShopAddress;
 use Src\Context\Shop\Domain\ValueObject\ShopId;
 use Src\Context\Shop\Domain\ValueObject\ShopName;
@@ -21,10 +22,10 @@ class CreateShopService
 
 
     public function handle( CreateShopCommand $createShopCommand): ShopId {
-
+        $shopPhone = is_null($createShopCommand->shopPhone()) ? GenerateShopPhoneService::randomPhone() : $createShopCommand->shopPhone();
       return $this->shopRepository->create(
             new ShopName($createShopCommand->shopname()),
-            new ShopPhone($createShopCommand->shopPhone()),
+            new ShopPhone($shopPhone),
             new ShopAddress($createShopCommand->shopaddress())
         );
 
